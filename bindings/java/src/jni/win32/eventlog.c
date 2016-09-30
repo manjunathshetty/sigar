@@ -270,7 +270,7 @@ JNIEXPORT jobject SIGAR_JNI(win32_EventLog_readlog)
 
     pevlr = (EVENTLOGRECORD *)&buffer;
     rv = ReadEventLog(h,
-                      EVENTLOG_SEEK_READ | EVENTLOG_FORWARDS_READ,
+                      EVENTLOG_SEQUENTIAL_READ | EVENTLOG_FORWARDS_READ,
                       recordOffset,
                       pevlr,
                       sizeof(buffer),
